@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #eee;
+}
+
+.flex-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 20rem);
+    grid-template-rows: 200px;
+    grid-template-areas: "header header"
+                         "side-1 side-2";
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header{
+    grid-area: header;
+    padding: 1rem 2rem 0 2rem;
+    background-color: white;
+}
+
+.header h2{
+    color: hsl(179, 62%, 43%);
+}
+
+.header h3{
+    color: hsl(71, 73%, 54%);
+}
+
+.header p{
+    color: hsl(218, 22%, 67%);
+    font-size: 0.91rem;
+}
+
+.side-1{
+    grid-area: side-1;
+    padding: 2rem;
+    color: white;
+    background-color: hsl(179, 62%, 43%);
+}
+
+
+.side-1 p{
+    font-size: medium;
+}
+button{
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    background-color: hsl(71, 73%, 54%);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover{
+    transition: ease-in 250ms;
+    background-color: white;
+    color: black;
+}
+span{
+    color: hsl(204, 43%, 93%);
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+}
+
+span.dollar{
+    font-size: 2rem;
+}
+
+.side-2{
+    grid-area: side-2;
+    color: white;
+    padding: 2rem;
+    background-color: hsl(179, 56%, 50%);
+}
+
+.paragraph{
+    width: 80%;
+}
+
+@media screen and (max-width: 760px){
+    .flex-container{
+        margin: 8rem;
+    }
+
+    .container{
+        grid-template-columns: 20rem;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "header header"
+                              "side side"
+                              "footer footer";
+    }
+
+    .header{
+        grid-area: header;
+    }
+
+    .side-1{
+        grid-area: side;
+    }
+
+    .side-2{
+        grid-area: footer;
+    }
+}
+
+
